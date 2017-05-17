@@ -8,8 +8,7 @@ const funprefix = "!"
 client.on('ready',() => {
 	console.log('I\'m Online\nI\'m Online');
 	client.user.setGame("Pokemon Uranium");
-	client.guilds.get('304921323577147392').channels.get('305666620796174337').sendMessage(":bangbang: I am back again after a reboot.");
-});
+	});
 
 client.on('guildMemberAdd', member => {
   var nummsg = Math.floor((Math.random() * 6) + 1);
