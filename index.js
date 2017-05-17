@@ -82,6 +82,10 @@ client.on("message", (message) => {
   let command = message.content.toLowerCase().slice(1).split(" ")[0];
   let args = message.content.toLowerCase().split(" ").slice(1);
 
+  if(message.content === '!avatar') {
+      message.reply(message.author.avatarURL);
+  }
+	
   if(message.content.toLowerCase().includes("lol")){
    return message.channel.sendMessage(":joy::joy: **LAUGH OUT LOUD** :joy::joy:").then(m => m.delete(5000));
   }
@@ -115,9 +119,7 @@ if(message.content.startsWith(funprefix))
   }
   }
 });
-  if(message.content === '!avatar') {
-      message.reply(message.author.avatarURL);
-  }
+  
 
 
 
