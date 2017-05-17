@@ -45,7 +45,7 @@ client.on('guildMemberAdd', member => {
   .setThumbnail(`${member.user.avatarURL}`)
   .setFooter(`Hope you will enjoy here at ${guild.name}`)
   .setTimestamp()
-  guild.channels.find('name',"join_and_leave").sendEmbed(embed);
+  guild.channels.find('name',"de_grandhome").sendEmbed(embed);
 });
 
 client.on('guildMemberRemove', member => {
@@ -71,11 +71,11 @@ client.on('guildMemberRemove', member => {
   .setThumbnail(`${member.user.avatarURL}`)
   .setFooter(`Hope you enjoyed here at ${guild.name}`)
   .setTimestamp()
-  guild.channels.find('name',"join_and_leave").sendEmbed(embed);
+  guild.channels.find('name',"de_grandhome").sendEmbed(embed);
 });
 
 client.on("message", (message) => {
-    var modRole = client.guilds.get('304921323577147392').roles.find(r => r.name.toLowerCase() === "moderator");
+    var modRole = message.guild.roles.find(r => r.name.toLowerCase() === "moderator");
     var msguser = message.author;
 
   let command = message.content.toLowerCase().slice(1).split(" ")[0];
@@ -89,16 +89,7 @@ client.on("message", (message) => {
    return message.channel.sendMessage(":joy::joy: **LAUGH OUT LOUD** :joy::joy:").then(m => m.delete(5000));
   }
 
-  if(message.mentions.users.first() === client.user){
-    let argss = message.content.split(" ");
-    let celcom = "cleverbot";
-    try {
-    let commandFile = require(`./commands/${celcom}.js`);
-    commandFile.run(client, message, argss);
-  } catch (err) {
-    console.error(err);
-  }
-  }else
+  
 if(message.content.startsWith(funprefix))
   {
     try {
