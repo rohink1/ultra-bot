@@ -45,7 +45,7 @@ client.on('guildMemberAdd', member => {
   .setThumbnail(`${member.user.avatarURL}`)
   .setFooter(`Hope you will enjoy here at ${guild.name}`)
   .setTimestamp()
-  guild.channels.find('name',"de_grandhome").sendEmbed(embed);
+  guild.channels.get("274886192074588161").sendEmbed(embed);
 });
 
 client.on('guildMemberRemove', member => {
@@ -71,7 +71,7 @@ client.on('guildMemberRemove', member => {
   .setThumbnail(`${member.user.avatarURL}`)
   .setFooter(`Hope you enjoyed here at ${guild.name}`)
   .setTimestamp()
-  guild.channels.find('name',"de_grandhome").sendEmbed(embed);
+  guild.channels.get("274886192074588161").sendEmbed(embed);
 });
 
 client.on("message", (message) => {
